@@ -1,8 +1,26 @@
 <template>
-    <p>Page about</p>
+    <div class="p-recipe-view">
+        recette avec l'id : {{ route.params.id }}
+    </div>
+    <RouterLink to="/">retour acceuil</RouterLink>
 </template>
 
-<style>
-</style>
+<script setup>
+import {useRoute , RouterLink,} from 'vue-router'
+import { onMounted,ref} from 'vue'
+import {client} from '@/utils/axios.js'
+const route = useRoute();
+console.log(route)
+const recipe = ref({})
+const getRecipes = async () => {
+    const response = await client.get(`/recipes/${route.params.id}`)
+    return response.data
 
-<script setup></script>
+}
+
+onMounted(async () =>{
+    recipe.value = await getRecipes();
+})
+</script>
+
+<style lang="scss" scoped></style>
