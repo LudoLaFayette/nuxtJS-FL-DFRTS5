@@ -93,10 +93,10 @@ console.log(home)
 </script>
 
 <template>
-  <p>page acceuil</p>
 <!-- 
   <h1>{{  home.data.hero_title }}</h1> -->
-  <PrismicRichText v-bind="{ field: home.data.hero_title}"/>
+  <!-- <PrismicRichText v-bind="{ field: home.data.hero_title}"/> -->
+<Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero__button"/>
 
 
 
@@ -124,7 +124,7 @@ console.log(home)
 
 
 
-  
+
 
  <!-- <ul >
         <li v-for="(recipe, index) in recipes" :key="index">
