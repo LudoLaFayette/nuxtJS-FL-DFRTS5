@@ -7,32 +7,32 @@
 <script setup>
 import { computed } from 'vue';
 
-import iconCommunity from '../icons/iconCommunity.vue';
-import iconDocumentation from '../icons/iconDocumentation.vue';
-import iconEcosystem from '../icons/iconEcosystem.vue';
-import iconTooling from '../icons/iconTooling.vue';
-import iconSupport from '../icons/iconSupport.Vue';
+import iconCommunity from '@/components/icons/iconCommunity.vue';
+import iconDocumentation from '@/components/icons/iconDocumentation.vue';
+import iconEcosystem from '@/components/icons/iconEcosystem.vue';
+import iconTooling from '@/components/icons/iconTooling.vue';
+import iconSupport from '@/components/icons/iconSupport.Vue';
 
 //Icones du projet
-import iconArrowLeft from '../icons/iconArrowLeft.vue';
-import iconArrowRight from '../icons/iconArrowRight.vue';
-import iconChrevronLeft from '../icons/iconChrevronLeft.vue';
-import iconDeliveryTruck from '../icons/iconDeliveryTruck.vue';
-import iconFacebook from '../icons/iconFacebook.vue';
-import iconHour from '../icons/iconHour.vue';
-import iconInstagram from '../icons/iconInstagram.vue';
-import iconLinkedin from '../icons/iconLinkedin.vue';
-import iconMapPin from '../icons/iconMapPin.vue';
-import iconPhoneCall from '../icons/iconPhoneCall.vue';
-import iconPlay from '../icons/iconPlay.vue';
-import iconSearch from '../icons/iconSearch.vue';
-import iconShoppingBag from '../icons/iconShoppingBag.vue';
-import iconStar from '../icons/iconStar.Vue';
-import iconTwitter from '../icons/iconTwitter.vue';
-import iconUstensils from '../icons/iconUstensils.vue';
-import iconUstensilsCrossed from '../icons/iconUstensilsCrossed.vue';
-import iconStarTangerine from '../icons/iconStarTangerine.vue'
-import iconChevronRight from '../icons/iconChevronRight.vue';
+import iconArrowLeft from '@/components/icons/iconArrowLeft.vue';
+import iconArrowRight from '@/components/icons/iconArrowRight.vue';
+import iconChrevronLeft from '@/components/icons/iconChrevronLeft.vue';
+import iconDeliveryTruck from '@/components/icons/iconDeliveryTruck.vue';
+import iconFacebook from '@/components/icons/iconFacebook.vue';
+import iconHour from '@/components/icons/iconHour.vue';
+import iconInstagram from '@/components/icons/iconInstagram.vue';
+import iconLinkedin from '@/components/icons/iconLinkedin.vue';
+import iconMapPin from '@/components/icons/iconMapPin.vue';
+import iconPhoneCall from '@/components/icons/iconPhoneCall.vue';
+import iconPlay from '@/components/icons/iconPlay.vue';
+import iconSearch from '@/components/icons/iconSearch.vue';
+import iconShoppingBag from '@/components/icons/iconShoppingBag.vue';
+import iconStar from '@/components/icons/iconStar.Vue';
+import iconTwitter from '@/components/icons/iconTwitter.vue';
+import iconUstensils from '@/components/icons/iconUstensils.vue';
+import iconUstensilsCrossed from '@/components/icons/iconUstensilsCrossed.vue';
+import iconStarTangerine from '@/components/icons/iconStarTangerine.vue'
+import iconChevronRight from '@/components/icons/iconChevronRight.vue';
 
 const props = defineProps({
     name: String,

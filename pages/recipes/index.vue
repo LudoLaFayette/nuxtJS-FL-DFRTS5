@@ -1,10 +1,18 @@
+<script setup>
+
+</script>
+
 <template>
-    <RecipeCard v-bind="{ title:'titre de la recette', description: 'une description' }"/>
-    page acceuil recette
+  <div class="p-index">
+    <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }" />
+    Page d'accueil
+    <div class="p-index__image">
+      <NuxtImg src="/image-1.png" />
+    </div>
+  </div>
 </template>
 
-<style>
-
+<style lang="scss">
+.p-index {
+}
 </style>
-
-<script setup></script>

@@ -1,101 +1,142 @@
 <script setup>
-import myButton from '@/components/elements/myButton.vue'
-import Layout from '@/components/layouts/DefaultLayout.vue'
-import MyBackgroundScroll from '@/components/MyBackgroundScroll.vue';
-import myIcon from '@/components/elements/myIcon.vue';
-import myNote from '../components/elements/myNote.vue';
-import {onMounted, ref, computed} from 'vue';
-import axios from 'axios';
-import myDynamicCard from '../components/myDynamicCard.vue';
 
-const client = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
-});
+const { client } = usePrismic()
+const { data: home } = await useAsyncData('home', () => client.getSingle("homepage"))
 
-const recipes = ref([]) 
+// const { data: home } = await useAsyncData('home', () => client.getByUID('homepage', hero_uid))
 
-const getRecipes = async () => {
-    const response = await client.get('/recipes')
-    return response.data
+console.log(home)
+// import myButton from '@/components/elements/myButton.vue'
+// import Layout from './layouts/default.vue'
+// import MyBackgroundScroll from '@/components/MyBackgroundScroll.vue';
+// import myIcon from '@/components/elements/myIcon.vue';
+// import myNote from '../components/elements/myNote.vue';
+// import {onMounted, ref, computed} from 'vue';
+// import axios from 'axios';
+// import myDynamicCard from '../components/myDynamicCard.vue';
 
-}
-const recipesNames = computed(() =>{
-    return recipes.value.map((items) => items.recipe_name ); 
-})
+// const client = axios.create({
+//     baseURL: import.meta.env.VITE_API_URL,
+// });
 
-const spaghettiRecipes = computed(() =>{
-    return recipes.value.filter((item) => item.recipe_name.toLowerCase().includes('Spaghetti'))
-})
+// const recipes = ref([]) 
 
-const hadGoalNo1 = computed(() =>{
-    return recipes.value.some((item) => item.goal_id === 1)
-})
-const hasGoalId1Long = computed(() => {
-    return recipes.value.some((item) => {
-        if (item.goal_id === 1) {
-            return true
-        } else {
-            return false
-        }
-    })
-})
+// const getRecipes = async () => {
+//     const response = await client.get('/recipes')
+//     return response.data
+
+// }
+// const recipesNames = computed(() =>{
+//     return recipes.value.map((items) => items.recipe_name ); 
+// })
+
+// const spaghettiRecipes = computed(() =>{
+//     return recipes.value.filter((item) => item.recipe_name.toLowerCase().includes('Spaghetti'))
+// })
+
+// const hadGoalNo1 = computed(() =>{
+//     return recipes.value.some((item) => item.goal_id === 1)
+// })
+// const hasGoalId1Long = computed(() => {
+//     return recipes.value.some((item) => {
+//         if (item.goal_id === 1) {
+//             return true
+//         } else {
+//             return false
+//         }
+//     })
+// })
 
 
-const addRecipe = () => {
-  recipes.value.push({ recipe_name: 'Pesto spaghetti' })
-}
+// const addRecipe = () => {
+//   recipes.value.push({ recipe_name: 'Pesto spaghetti' })
+// }
 
-const recipesInHero = 4
-// Utiliser 2 computed pour gérer les listes de recette
-// Une computed pour afficher les 4 premières du tableau recipes avec recipes.value.slice
-// Une computed pour afficher toutes les autres avec recipes.value.slice
+// const recipesInHero = 4
+// // Utiliser 2 computed pour gérer les listes de recette
+// // Une computed pour afficher les 4 premières du tableau recipes avec recipes.value.slice
+// // Une computed pour afficher toutes les autres avec recipes.value.slice
 
-const heroRecipes = computed(() => {
-  // indexes de 0 à 3 (4 exclus)
-  return recipes.value.slice(0, recipesInHero)
-})
+// const heroRecipes = computed(() => {
+//   // indexes de 0 à 3 (4 exclus)
+//   return recipes.value.slice(0, recipesInHero)
+// })
 
-const gridPage = ref(1)
+// const gridPage = ref(1)
 
-const gridRecipes = computed(() => {
-  const recipesByPage = 4
-  // pour gridPage === 1 => slice(4, 7)
-  // pour gridPage === 2 => slice(4, 10)
-  // pour gridPage === 3 => slice(4, 13)
-  return recipes.value.slice(recipesInHero, recipesInHero + gridPage.value * recipesByPage)
-})
+// const gridRecipes = computed(() => {
+//   const recipesByPage = 4
+//   // pour gridPage === 1 => slice(4, 7)
+//   // pour gridPage === 2 => slice(4, 10)
+//   // pour gridPage === 3 => slice(4, 13)
+//   return recipes.value.slice(recipesInHero, recipesInHero + gridPage.value * recipesByPage)
+// })
 
-// Retourner s'il reste des recettes à afficher ou non
-const moreRecipesToShow = computed(() => {
-  return gridRecipes.value.length < (recipes.value.length - recipesInHero)
-})
+// // Retourner s'il reste des recettes à afficher ou non
+// const moreRecipesToShow = computed(() => {
+//   return gridRecipes.value.length < (recipes.value.length - recipesInHero)
+// })
 
-const seeMoreRecipe = () => {
-  gridPage.value++
-}
+// const seeMoreRecipe = () => {
+//   gridPage.value++
+// }
 
-onMounted(async () =>{ 
-    recipes.value = await getRecipes();
-    console.log(recipesNames)
-    console.log(spaghettiRecipes)
-    console.log(hadGoalNo1)    
-    // getRecipes();
-});
+// onMounted(async () =>{ 
+//     recipes.value = await getRecipes();
+//     console.log(recipesNames)
+//     console.log(spaghettiRecipes)
+//     console.log(hadGoalNo1)    
+//     // getRecipes();
+// });
+
 
 </script>
 
 <template>
-    <!-- <ul >
+  <p>page acceuil</p>
+<!-- 
+  <h1>{{  home.data.hero_title }}</h1> -->
+  <PrismicRichText v-bind="{ field: home.data.hero_title}"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ <!-- <ul >
         <li v-for="(recipe, index) in recipes" :key="index">
             {{ recipe.recipe_name }}
         </li>
     </ul> -->
-    <div v-for="(recipe, index) in heroRecipes" :key="index" >
+    <!-- <div v-for="(recipe, index) in heroRecipes" :key="index" >
         <myDynamicCard :title="recipe.recipe_name" :description="recipe.recipe_description" :image="recipe.image_url" :id="recipe.recipe_id"></myDynamicCard>
     </div>
     <div v-for="(recipe, index) in gridRecipes" :key="index" >
         <myDynamicCard :title="recipe.recipe_name" :description="recipe.recipe_description" :image="recipe.image_url" :id="recipe.recipe_id"></myDynamicCard>
-    </div>
+    </div> -->
     
     <!-- <Layout>
     <template #header>
@@ -131,7 +172,7 @@ onMounted(async () =>{
     <!-- <p></p> -->
 
     <!-- {{ recipes }} -->
-    <button  @click="seeMoreRecipes">see more recipes</button>
+    <!-- <button  @click="seeMoreRecipes">see more recipes</button>
     <Layout>
         <template v-slot:header>
             <myNote/>
@@ -162,15 +203,13 @@ onMounted(async () =>{
         <template v-slot:footer>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, autem dicta? Quos velit fugit ea maiores explicabo?
                 Fugiat, sapiente? Totam, ipsam. Maiores iure sint non dolore, magnam eius quos incidunt.</p>
-            <!-- <myButton link="#">Order Now</myButton>
+            <myButton link="#">Order Now</myButton>
       <myButton link="#" variant="rounded">Order Now</myButton>
-      <myButton link="#" size="small">Order Now</myButton> -->
+      <myButton link="#" size="small">Order Now</myButton>
             <myButton href="/order">Order Now</myButton>
             <myIcon/>
             <myNote/>
         </template>
-    </Layout>
-  
-    
+    </Layout> -->
   
 </template>

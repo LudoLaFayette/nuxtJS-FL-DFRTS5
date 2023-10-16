@@ -1,8 +1,9 @@
 <template>
+    <!-- Ajouter les composents header/aside/footer si crée indépendamment -->
     <main class="layout">
         <header class="layout__header"> <slot name="header"></slot></header>     
         <aside class="layout__aside"> <slot name="aside" ></slot></aside>
-        <article class="layout__article"> <slot ></slot></article>
+        <article class="layout__article"> <NuxtPage/> </article>
         <footer class="layout__footer"><slot name="footer"></slot></footer>
     </main>
 </template>
