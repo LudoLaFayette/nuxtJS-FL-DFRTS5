@@ -2,7 +2,9 @@
 
 const { client } = usePrismic()
 const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
-
+const { data: recipes } = await useAsyncData('recipes', () => {
+  return $fetch(env.public.apiUrl + '/recipes')
+})
 if (!home.value || error.value) {
   throw createError({
     statusCode: 404,
@@ -108,8 +110,20 @@ useSeoMeta({
 <!-- 
   <h1>{{  home.data.hero_title }}</h1> -->
   <!-- <PrismicRichText v-bind="{ field: home.data.hero_title}"/> -->
+  <div v-for="recipe in recipes">
+    <RecipeCard :id="recipe.recipe_id" :title="recipe.recipe_title" :description="recipe.recipe_description" />
+  </div>
+  
 <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
 <Information :information="home.data.information" />
+
+<HowTo
+    v-bind="{
+      tag: 'How to',
+      title: 'Food Us An Important Part Of A Balanced Diet ',
+      items: home.data.how_to,
+    }"
+  />
 
 
 
