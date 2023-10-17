@@ -9,7 +9,7 @@ const props = defineProps({
     <div v-for="item in information" class="c-information__item">
       <!-- Matching prismic options / file names -->
       <div class="c-information__icon">
-        <img :src="`/icons/${item.information_icon}.svg`" alt="">
+        <img :src="`/icon/${item.information_icon}.svg`" alt="">
       </div>
       <!-- OR v-if case by case  <div v-if="item.information_icon === 'phone'" class="c-information__icon">-->
       <!--        <img :src="`/icons/phone.svg`" alt="">-->

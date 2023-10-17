@@ -103,7 +103,7 @@ console.log(home)
   <h1>{{  home.data.hero_title }}</h1> -->
   <!-- <PrismicRichText v-bind="{ field: home.data.hero_title}"/> -->
 <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
-
+<Information :information="home.data.information" />
 
 
 
