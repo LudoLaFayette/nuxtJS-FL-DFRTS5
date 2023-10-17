@@ -9,6 +9,7 @@ const props = defineProps(
         size: String,
         variant: String,
         hasIcon: Boolean,
+        hasVideo: Boolean,
     
     })
 
@@ -29,6 +30,7 @@ const className = computed(() => ({
     <button v-else :class="className" class="button">
         <slot></slot>
         <myIcon v-if="hasIcon" name="chevronRight" background="backgroundArrowTonWBkrd" size="smallIcon"></myIcon>
+        <myIcon v-if="hasVideo" name="chevronRight" background="backgroundArrowTonWBkrd" size="smallIcon"></myIcon>
     </button>
 </template>
 

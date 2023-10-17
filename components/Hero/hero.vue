@@ -1,10 +1,17 @@
 
 <script setup="">
+const env = useRuntimeConfig()
 const props = defineProps({
     title: Array,
     text: Array,
     buttons: Array,
 })
+const { data: recipes } = await useAsyncData('recipes', async () => {
+  return $fetch(env.public.apiUrl + '/recipes')
+})
+// onMounted(async () => {
+//   await getRecipes()
+// })
 </script>
 
 <template>
@@ -15,9 +22,23 @@ const props = defineProps({
         <div class="c-hero__text">
             <PrismicRichText :field="text"/>
         </div>
-        <div class="c-hero__button">
-            <PrismicRichText v-for="button in buttons">{{ home.data.hero_button }}</PrismicRichText>
+        <div  class="c-hero__button">
+            <div v-for="button in buttons">
+            <!-- <myButton  v-if="button.button_type === 'default'" class="c-button__button -default">
+                <a :href="button.button_link.url">{{ button.button_label }}</a>
+            </myButton>
+            
+                <myButton v-else="button.button_type === 'video'" :size="small" :variant="rounded" :hasIcon="true" class="c-hero__button -video">
+                <myIcon :name="chevronRight" />
+                <a :href="button.button_link.url">{{ button.button_label }}</a>
+            </myButton>   -->
+            <myButton :href="button.button_link.url" :variant="button.button_type" :hasIcon="true">{{ button.button_label }}
+            <Myicon ></Myicon></myButton>
+                      
         </div>
+        <!-- {{ recipes }} -->
+        </div>
+        
    </section>
  </template>
 

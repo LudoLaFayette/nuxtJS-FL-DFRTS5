@@ -1,8 +1,14 @@
 <script setup>
 
 const { client } = usePrismic()
-const { data: home } = await useAsyncData('home', () => client.getSingle("homepage"))
+const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
 
+if (!home.value || error.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "la page d\accueil est introuvable",
+  });
+}
 // const { data: home } = await useAsyncData('home', () => client.getByUID('homepage', hero_uid))
 
 console.log(home)
@@ -96,7 +102,7 @@ console.log(home)
 <!-- 
   <h1>{{  home.data.hero_title }}</h1> -->
   <!-- <PrismicRichText v-bind="{ field: home.data.hero_title}"/> -->
-<Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero__button"/>
+<Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
 
 
 
