@@ -95,7 +95,13 @@ console.log(home)
 //     // getRecipes();
 // });
 
-
+useSeoMeta({
+  title: home.value.data.meta_title,
+  ogTitle: home.value.data.meta_title,
+  description: home.value.data.meta_description,
+  ogDescription: home.value.data.meta_description,
+  ogImage: home.value.data.meta_image,
+})
 </script>
 
 <template>
