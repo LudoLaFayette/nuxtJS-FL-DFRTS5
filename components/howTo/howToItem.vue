@@ -14,12 +14,12 @@
     &__title {
       font-weight: 700;
       font-family: $primary-font-familly;
-      font-size: $medium-font-size;
+      font-size: $normal_font_size;
     }
   
     &__texte {
       font-family: $primary-font-familly;
-      font-size: $regular-font-size;
+      font-size: $normal_font_size;
     }
   
     &__image {

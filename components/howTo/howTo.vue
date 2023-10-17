@@ -13,7 +13,8 @@
           v-for="(item, index) in items"
           :class="['c-how-to__item', { '--center': index === 1 }]"
         >
-          <HowtoItem
+        <!-- {{ item }} -->
+          <HowToItem
             :title="item.how_to_title"
             :text="item.how_to_texte"
             :image="item.how_to_image"
