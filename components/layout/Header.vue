@@ -8,8 +8,7 @@ console.log(store);
   <header class="c-header">
     Le header
     <div class="c-header_count" @click="store.increment">
-        {{ store.count }}
-    {{ store.foo }}
+    {{ store.cart }}
     </div>
 
   </header>
@@ -18,6 +17,12 @@ console.log(store);
 
 <style lang="scss">
 .c-header {
+    position: fixed;
+  padding: 20px;
+  background-color: orange;
+  top: 0;
+  left: 0;
+  right: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

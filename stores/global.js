@@ -14,6 +14,13 @@ export const useGlobalStore = defineStore('global', {
         increment () {
             this.count++
         },
+        setCart(ids){
+            if(!ids || !Array.isArray(ids)){
+                this.cart = []
+            }else{
+            this.cart = ids
+            }
+        },
         /**
          * Add id to cart if not already in it
          * @param id
