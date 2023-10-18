@@ -11,7 +11,7 @@ import iconCommunity from '@/components/icons/iconCommunity.vue';
 import iconDocumentation from '@/components/icons/iconDocumentation.vue';
 import iconEcosystem from '@/components/icons/iconEcosystem.vue';
 import iconTooling from '@/components/icons/iconTooling.vue';
-import iconSupport from '@/components/icons/iconSupport.Vue';
+import iconSupport from '@/components/icons/iconSupport.vue';
 
 //Icones du projet
 import iconArrowLeft from '@/components/icons/iconArrowLeft.vue';
@@ -27,7 +27,7 @@ import iconPhoneCall from '@/components/icons/iconPhoneCall.vue';
 import iconPlay from '@/components/icons/iconPlay.vue';
 import iconSearch from '@/components/icons/iconSearch.vue';
 import iconShoppingBag from '@/components/icons/iconShoppingBag.vue';
-import iconStar from '@/components/icons/iconStar.Vue';
+import iconStar from '@/components/icons/iconStar.vue';
 import iconTwitter from '@/components/icons/iconTwitter.vue';
 import iconUstensils from '@/components/icons/iconUstensils.vue';
 import iconUstensilsCrossed from '@/components/icons/iconUstensilsCrossed.vue';
