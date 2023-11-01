@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  
+  imports: {
+    transform: {
+      // you could also add the path of your built library to prevent this happening 
+      // for your users, but the issue is probably only replicable in your monorepo
+      exclude: [/\bsfui\b/]
+    }
+  },
   
   app: {
     // Load a google font across all pages
@@ -12,7 +18,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@nuxtjs/prismic', '@pinia/nuxt'],
+  modules: ['@nuxtjs/prismic', '@pinia/nuxt', '@nuxtjs/storybook'],
   prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
   devtools: {
     enabled: true

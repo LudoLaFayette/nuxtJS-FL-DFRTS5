@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import MyIcon from './myIcon.vue';
+import MyIcon from '@/components/elements/myIcon.vue';
 
 import {ref} from 'vue';
 
