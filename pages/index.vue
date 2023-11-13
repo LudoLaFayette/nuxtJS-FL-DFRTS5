@@ -1,10 +1,13 @@
 <script setup>
-
-const { client } = usePrismic()
-const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
+//Appel des données de l'API avec Nancy
+const env = useRuntimeConfig()
 const { data: recipes } = await useAsyncData('recipes', () => {
   return $fetch(env.public.apiUrl + '/recipes')
 })
+
+const { client } = usePrismic()
+const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
+
 if (!home.value || error.value) {
   throw createError({
     statusCode: 404,
