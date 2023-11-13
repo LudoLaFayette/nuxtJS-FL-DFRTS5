@@ -33,7 +33,7 @@
   }
 
   > * {
-    padding: rem(16);
+    padding: rem(0);
   }
   &__article {
     grid-area: article;
@@ -42,7 +42,6 @@
     grid-area: aside;
   }
   &__footer {
-    background: $primary-color;
     grid-area: footer;
   }
   &__header {
