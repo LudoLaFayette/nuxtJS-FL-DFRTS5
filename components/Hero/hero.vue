@@ -33,7 +33,7 @@ const { data: recipes } = await useAsyncData('recipes', async () => {
                 <a :href="button.button_link.url">{{ button.button_label }}</a>
             </myButton>   -->
             <myButton :href="button.button_link.url" :variant="button.button_type" :hasIcon="true">{{ button.button_label }}
-            <Myicon ></Myicon></myButton>
+            <myIcon ></myIcon></myButton>
                       
         </div>
         <!-- {{ recipes }} -->

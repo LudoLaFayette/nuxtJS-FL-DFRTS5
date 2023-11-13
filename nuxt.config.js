@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  
   imports: {
     transform: {
       // you could also add the path of your built library to prevent this happening 
@@ -19,6 +20,11 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxtjs/prismic', '@pinia/nuxt', '@nuxtjs/storybook'],
+  storybook: {
+    // Options
+    url:'http://localhost:6006',
+    port:6006
+  },
   prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
   devtools: {
     enabled: true
