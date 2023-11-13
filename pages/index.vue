@@ -107,9 +107,7 @@ useSeoMeta({
 </script>
 
 <template>
-<!-- 
-  <h1>{{  home.data.hero_title }}</h1> -->
-  <!-- <PrismicRichText v-bind="{ field: home.data.hero_title}"/> -->
+
 <div class="p-index__recipe" v-for="recipe in recipes">
         <RecipeCard v-bind="{ id: recipe.recipe_id, title: recipe.recipe_name, description: recipe.recipe_description, image: recipe.image_url}" />
 </div>

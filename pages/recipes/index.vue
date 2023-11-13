@@ -14,5 +14,7 @@
 
 <style lang="scss">
 .p-index {
+  display: flex;
+  align-items: center;
 }
 </style>
