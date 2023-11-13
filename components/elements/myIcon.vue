@@ -39,7 +39,7 @@ const props = defineProps({
     background: String,
     size: String,
 })
-
+//Choix de l'icone :
 const getIcon = computed(() => {
     switch (props.name) {
     case 'community':
@@ -100,7 +100,8 @@ const className = computed(() => ({
     ' -backgroundPlay': props.background === 'backgroundPlay',
     ' -backgroundArrowTonWBkrd': props.background === 'backgroundArrowTonWBkrd',
     ' -smallIcon': props.size === 'smallIcon',
-    ' -bigIcon': props.size === 'bigIcon'
+    ' -bigIcon': props.size === 'bigIcon',
+    ' -noneStyle': props.background === 'noneStyle'
 }));
 </script>
 
@@ -185,7 +186,10 @@ const className = computed(() => ({
             scale: 2.75 ;
         }
     }
-
+    &.-noneStyle{
+        box-shadow: none;
+        border-radius: none;
+    }
 
 
 

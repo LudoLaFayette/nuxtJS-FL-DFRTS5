@@ -6,27 +6,117 @@ console.log(store);
 
 <template>
   <header class="c-header">
-    Le header
-    <div class="c-header_count" @click="store.increment">
-    {{ store.cart }}
+    <div class="c-header__logo">
+      <img src="../../public/logo.jpg" alt="Logo de la maquette S5">
     </div>
+    <nav class="c-header__menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Shop</a></li>
+      </ul>
+    </nav>
+    <div class="c-header__côté-droite">
+
+        <div class="c-header__côté-droite--Search">
+          <MyIcon name="search" background="noneStyle"  ></MyIcon>
+          <input type="search" placeholder="Rechercher...">
+        </div>
+        <div class="c-header__côté-droite--count" @click="store.increment">
+                      {{ store.cart }}
+            </div>
+            <MyIcon class="c-header__côté-droite--border" name="shoppingBag" background="noneStyle"></MyIcon>
+            
+          
+        
+
+    </div>
+    
 
   </header>
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-header {
-    position: fixed;
-  padding: 20px;
-  background-color: orange;
-  top: 0;
-  left: 0;
-  right: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    color: white;
-    font-size: 24px;
-}
+      align-items: center;
+      background-color: white;
+      // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;  
+      padding: rem(20) rem(50);  
+
+
+        &__logo{
+          img {
+            height: rem(50);
+            width: auto;
+        }
+        } 
+
+
+      &__menu {
+          ul {
+              display: flex;
+              font-size: $tiny_font_size;  
+              font-weight: 600;
+              gap: rem(30);              
+              list-style-type: none;
+              margin: 0;           
+              padding: 0;            
+              
+              li {
+                  a {
+                      color: black;
+                      text-decoration: none;
+                                          
+                      &:hover {
+                          text-decoration: underline;
+                      }
+                  }
+              }
+          }
+      }
+
+        &__côté-droite {
+            display: flex;
+            align-items: center;
+            gap: rem(10);  
+            border-radius: rem(10);
+            box-shadow: 0px rem(2) rem(10) rgba(0, 0, 0, 0.20);
+            padding: rem(5);
+            
+            input[type="search"] {
+                border: none;
+                outline: none;
+            }
+            &--Search{
+                align-items: center;
+                background-color: white;             
+                border-radius: rem(15);
+                display: flex;
+
+            }  
+
+              &--count{
+              background-color: $primary-color;
+              box-shadow: (0px 0px 22px rgba(204, 0, 0, 0.80));
+              border-radius: rem(50);
+              font-size: rem(12);
+              translate: rem(65) rem(-5);
+              color: white;
+              
+
+            }
+            
+            &--border{         
+            border-left: 1px solid $grey;
+            border-radius: 0px 10px 10px 0px;
+                
+            }
+            
+            }
+        }
+  
 </style>

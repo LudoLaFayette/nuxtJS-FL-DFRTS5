@@ -46,7 +46,6 @@
     grid-area: footer;
   }
   &__header {
-    background: $primary-color;
     grid-area: header;
   }
 }

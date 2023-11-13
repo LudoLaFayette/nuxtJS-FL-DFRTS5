@@ -7,7 +7,7 @@
     <RecipeCard v-bind="{ title: 'Titre de la recette', description: 'une description' }" />
     Page d'accueil
     <div class="p-index__image">
-      <NuxtImg src="/image-1.png" />
+      <img src="" />
     </div>
   </div>
 </template>
