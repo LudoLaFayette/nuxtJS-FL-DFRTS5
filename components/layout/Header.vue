@@ -42,11 +42,10 @@ console.log(store);
 .c-header {
       align-items: center;
       background-color: white;
-      // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-between;  
       padding: rem(20) rem(50);  
-
 
         &__logo{
           img {

@@ -43,15 +43,6 @@ const onClick = () => {
     </div>
   </div>
     
-<!-- 
-    <div class="c-recipe-card">
-    <div class="c-recipe-card__content">
-      <img class="c-recipe-card__image" :src="image" alt="">
-      <p class="c-recipe-card__title">{{ title }}</p>
-      <p class="c-recipe-card__description">{{ description }}</p>
-      <RouterLink :to="`/recipes/${id}`">Plus d'infos</RouterLink>
-    </div>
-  </div> -->
 </template>
 
 <style lang="scss" scoped>

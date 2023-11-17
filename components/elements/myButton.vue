@@ -1,30 +1,48 @@
 <script setup>
+
 const props = defineProps({
   href: String,
   size: String,
   variant: String,
+  color: String,
+  bg: String,
+  hasIcon: Boolean
 })
+
 const className = computed(() => ({
   ' -withIcon': props.hasIcon,
   ' -rounded': props.variant === 'rounded',
   ' -video': props.variant === 'video',
-  ' -small': props.size === 'small'
+  ' -small': props.size === 'small',
+  ' -black': props.color === 'black',
+  ' -orange2': props.color === 'orange',
+  ' -orange': props.variant === 'orange',
+  ' -nobg': props.bg === "nobg",
+  
 }))
+
 const isVideoButton = computed(() => {
   return props.variant === 'video'
 })
 </script>
+
 <template>
   <a v-if="href" :href="href" class="c-button" :class="className">
-    <PlayButton v-if="isVideoButton" />
+    <MyIcon name="play" background="backgroundPlay" v-if="isVideoButton" />
     <slot></slot>
   </a>
+
+  <button v-else-if="hasIcon" class="c-button -hasIcon" :class="className">
+    <slot></slot>
+    <MyIcon v-if="hasIcon" :class="className" name="chrevronRight" background="backgroundW" size="bigIcon" />
+  </button>
+
   <button v-else class="c-button" :class="className">
     <slot></slot>
   </button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-button {
   background-color: $primary-color;
   background: linear-gradient(180deg, $secondary-color 0%, $primary-color 100%);
@@ -37,32 +55,50 @@ const isVideoButton = computed(() => {
   align-items: center;
   color: $white;
   font-family: $primary-font-familly;
-  font-size: $tiny-font-size;
+  font-size: $normal_font_size;
   font-weight: 600;
   padding: rem(20) rem(50);
   text-decoration: none;
   word-wrap: break-word;
   width: fit-content;
-  @include large-up{
-    padding: rem(33) rem(67);
+  cursor: pointer;
+  &.-hasIcon{
+    padding: rem(20) rem(10); 
   }
   &.-rounded {
     background: $primary-color;
     box-shadow: none;
     border-radius: rem(37);
     font-weight: 500;
-    padding: rem(26) rem(64);
-    @include large-up{
-      padding: rem(20) rem(50);
-    }
   }
+
   &.-video {
     background: white;
     box-shadow: none;
     color: black;
   }
+  &.-nobg {
+    background: transparent;
+    box-shadow: none;
+    border-radius: rem(37);
+    font-weight: 500;
+    padding: rem(26) rem(64);
+    border: 1px solid $primary-color;
+  }
+  &.-black {
+    a{
+      text-decoration: none;
+      color: $black;
+    }
+  }
+  &.-orange {
+    background: $primary-color;
+  }
+  &.-orange2 {
+    background: $primary-color;
+  }
   &.-small {
-    font-size: $very-tiny-font-size;
+    font-size: $tiny_font_size;
     padding: rem(14) rem(29);
     font-weight: 400;
   }
