@@ -47,6 +47,7 @@ console.log(recipes)
     font-size: $big_font_size;
     margin-top: rem(10);
     margin-bottom: rem(40);
+    font-weight: 700;
 }
 
 .recipes-list {
