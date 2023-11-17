@@ -34,7 +34,7 @@ const isVideoButton = computed(() => {
 
   <button v-else-if="hasIcon" class="c-button -hasIcon" :class="className">
     <slot></slot>
-    <MyIcon v-if="hasIcon" :class="className" name="chrevronRight" background="backgroundW" size="bigIcon" />
+    <MyIcon v-if="hasIcon" :class="className" name="chevronRight" background="backgroundPlay" size="bigIcon" />
   </button>
 
   <button v-else class="c-button" :class="className">

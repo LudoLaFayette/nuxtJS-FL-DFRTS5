@@ -16,14 +16,14 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 
         <div class="c-hero__leftSide">
             
-            <div class="c-hero__leftSide--bike">
-                <div class="c-hero__leftSide--bike--title">
-                    <p>Bike Delivery</p>
+                <div class="c-hero__leftSide--bike">
+                    <div class="c-hero__leftSide--bike--title">
+                        <p>Bike Delivery</p>
+                    </div>
+                    <div class="c-hero__leftSide--bike--img">
+                        <img src="/bike.jpg" alt="image bike delivery">
+                    </div>        
                 </div>
-                <div class="c-hero__leftSide--bike--img">
-                    <img src="/bike.jpg" alt="image bike delivery">
-                </div>        
-            </div>
 
                 <div class="c-hero__leftSide--title">
                     <PrismicRichText :field="title"/>
@@ -103,11 +103,11 @@ margin-right: rem(50);
     &--text{
         // text-align: center;
         font-size: $tiny-font-size;
-
     }
 
     }
     &--title{
+        margin-top: rem(20);
         line-height: 1.2;
         color: black;
         font-weight: 700;
@@ -117,8 +117,13 @@ margin-right: rem(50);
         color: orange;        
         }
     }
+
+    &--text{
+        margin-top: rem(-30);
+
+    }
     &--buttons {
-        margin-top: rem(-260);
+        margin-top: rem(-310);
         display: flex;
         gap: rem(40);
         align-items: center;

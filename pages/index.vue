@@ -30,13 +30,12 @@ useSeoMeta({
 
 <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
 
-
-<!-- <div v-for="recipe in recipes">
-            <RecipeCard v-bind="{ id: recipe.recipe_id, title: recipe.recipe_name, description: recipe.recipe_description, image: recipe.image_url}" />
-    </div> -->
 <div>
   <Information :information="home.data.information" />
 </div>
+<RecipeCard></RecipeCard>
+
+
 <div>
   <HowTo
     v-bind="{

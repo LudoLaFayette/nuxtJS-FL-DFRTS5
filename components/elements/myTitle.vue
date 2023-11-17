@@ -1,5 +1,5 @@
 <template>
-    <h1 class="title" :class="className">{{ content }}</h1>
+    <h1 class="title" :class="className"></h1>
     <!-- <h2 class="title__H2">{{ content }}</h2>
     <h3 class="mainText">{{ content }}</h3>
     <h4 class="smallText">{{ content }}</h4>
@@ -14,7 +14,6 @@ import { computed } from "vue";
 const props = defineProps(
     {
         type: String,
-        content: String,
     })
 // const className = ref(`button ${props.variant === "rounded" ? " -rounded" : ""} ${props.size === "small" ? " -small" : ""}`)
 const className = computed(() => ({
