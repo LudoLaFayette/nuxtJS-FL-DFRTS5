@@ -14,9 +14,10 @@ if (!home.value || error.value) {
     statusMessage: "la page d\accueil est introuvable",
   });
 }
+
+console.log(recipes)
 // const { data: home } = await useAsyncData('home', () => client.getByUID('homepage', hero_uid))
 
-console.log(home)
 // import myButton from '@/components/elements/myButton.vue'
 // import Layout from './layouts/default.vue'
 // import MyBackgroundScroll from '@/components/MyBackgroundScroll.vue';
@@ -111,21 +112,35 @@ useSeoMeta({
 
 <template>
 
-<div v-for="recipe in recipes">
-        <RecipeCard v-bind="{ id: recipe.recipe_id, title: recipe.recipe_name, description: recipe.recipe_description, image: recipe.image_url}" />
-</div>
-  
-<Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
-<Information :information="home.data.information" />
 
-<HowTo
+  
+
+<div class='b-intro'>
+    <div class="b-intro__leftSide">
+      <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
+    </div>
+      <div class="b-intro_middleSide">
+        <img src="/Abstract.svg" alt="flèche">
+      </div>
+    <div class="b-intro__rightSide">
+      <div v-for="recipe in recipes">
+            <RecipeCard v-bind="{ id: recipe.recipe_id, title: recipe.recipe_name, description: recipe.recipe_description, image: recipe.image_url}" />
+    </div>
+  </div>  
+</div>
+
+<div>
+  <Information :information="home.data.information" />
+</div>
+<div>
+  <HowTo
     v-bind="{
       tag: 'How to',
       title: 'Food Us An Important Part Of A Balanced Diet ',
       items: home.data.how_to,
     }"
   />
-
+</div>
 
 
 
@@ -240,3 +255,14 @@ useSeoMeta({
     </Layout> -->
   
 </template>
+<style lang='scss'>
+.b-intro{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap : rem(2);
+  align-items: center;
+  &__rightSide{
+    align-items: center;
+  }
+}
+</style>

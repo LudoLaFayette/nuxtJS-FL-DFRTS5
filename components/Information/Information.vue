@@ -34,13 +34,21 @@ const props = defineProps({
 .c-information {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  border-radius: rem(20);
+  padding: rem(35);
+  margin: rem(20) rem(60);
+
+  box-shadow: 0px rem(1) rem(4) rgba(0, 0, 0, 0.25);
   &__item {
     flex: 1;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    &:nth-child(2) {
+      border-left: 2px solid $grey;
+      border-right: 2px solid $grey;
+    }
   }
   &__icon {
     display: inline-flex;
@@ -49,19 +57,9 @@ const props = defineProps({
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: $primary-color;
+    stroke: $white;
     border-radius: 50%;
-  }
-  &__title {
-    font-weight: 700;
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
-  }
-  &__text {
-    &:not(:first-child) {
-      margin-top: 10px;
-    }
   }
 }
 </style>

@@ -25,21 +25,24 @@ const onClick = () => {
 </script>
 
 <template>
-    <div class="cardVignette" >
+  <div class="c-cardVignette">
+    <div class="c-cardVignette__card" >
         <img :src="image" alt=""/>     
-        <div class="cardVignette__content" >
-            <p class="cardVignette__title">{{ title }}</p>
-      <p class="cardVignette__description">{{ description }}</p>
+        <div class="c-cardVignette__card--content" >
+            <p class="cardVignette__card--content--title">{{ title }}</p>
+            <p class="cardVignette__card--content--description">{{ description }}</p>
       <!-- Système flexible pour n'avoir qu'un bouton au lieu de 2 -->
-            <div class="cardVignette__button" @click="onClick">
+            <div class="c-cardVignette__card--content--button" @click="onClick">
                 {{ buttonLabel }}
             </div>
-            <div class="cardVignette__icons">
+            <div class="c-cardVignette__card--content--icons">
                 <myIcon name="arrowRight" background="backgroundBCK"/>
                 <myIcon name="arrowLeft" background="backgroundW"/>
             </div>
         </div>        
     </div>
+  </div>
+    
 <!-- 
     <div class="c-recipe-card">
     <div class="c-recipe-card__content">
@@ -52,9 +55,13 @@ const onClick = () => {
 </template>
 
 <style lang="scss" scoped>
-.cardVignette {
+.c-cardVignette {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    &__card{
         display: grid;
-        grid-template-rows: repeat(2 ,1fr);
+        grid-template-rows: repeat(4 ,1fr);
         max-width: 400px;
         max-height: 500px;
         border-radius: rem(20);
@@ -63,45 +70,58 @@ const onClick = () => {
         line-height: 1.2;
         text-align: center;
         position: relative;
-            
+
         img{
             width: 100%;
             height: auto;
             border-radius: rem(20) rem(20) rem(0) rem(0)
         } 
-       
-        &__content{
+
+
+        &--content{
             display: grid;
             grid-template-rows: repeat(4 ,1fr);            
             align-items: center;
             gap: rem(20);   
+
+              &--title {
+                font-size: 22px;
+                line-height: 1.2;
+                color: black;
+                &:not(:first-child) {
+                  margin-top: 10px;
+                }
+                }
+
+              &--icons{       
+                  display: flex;     
+                  position: absolute;
+                  align-items: center;
+                  gap: rem(35);
+                  transform: translate(133px, 103px);
+              }
+                    
+              &--button {
+                display: inline-block;
+                background-color: orange;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                cursor: pointer;
+
+                &:not(:first-child) {
+                  margin-top: 30px;
+                }
+              }
           
         }
-        &__title {
-    font-size: 22px;
-    line-height: 1.2;
-    color: black;
-    &:not(:first-child) {
-      margin-top: 10px;
+
     }
-  }
-        &__icons{       
-            display: flex;     
-            position: absolute;
-            align-items: center;
-            gap: rem(35);
-            transform: translate(133px, 103px);
-        }
-        &__button {
-    display: inline-block;
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-    }
+        
+            
+        
+       
+        
+        
 }
 </style>
