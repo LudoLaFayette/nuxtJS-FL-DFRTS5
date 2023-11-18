@@ -35,6 +35,7 @@ const props = defineProps({
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    text-align: center  ;
     &:nth-child(2) {
       border-left: 2px solid $grey;
       border-right: 2px solid $grey;

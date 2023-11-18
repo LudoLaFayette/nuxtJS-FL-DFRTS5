@@ -60,21 +60,20 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 .c-hero{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: rem(50);
+    height: 1500px;
   align-items: center;
     margin-top: rem(-190);
-    &__middleSide{
-        display: flex;
-    }
+
   &__leftSide{
     display: grid;
     grid-template-rows: repeat(4,1fr);
     align-items: center;
     text-align: justify;
+    // width: 400px;
 
 
     &--bike{
-        margin-top: rem(200);
+        margin-top: 9rem;
         background-color: #F5DDC4;        
         width: 270px;
       display: flex;
@@ -87,6 +86,7 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
         color: $primary-color;
         font-weight: 600;
         padding-left: rem(10);
+        
     }
     &--img{        
         background-color: #ffffff;
@@ -106,23 +106,28 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 
     }
     &--title{
-        margin-top: rem(-30);
+        // margin-top: -5.75rem;
         line-height: 1.2;
         color: black;
         font-weight: 700;
         text-align: left;
         font-size: $title_size;
+        width: rem(650);
+        min-width: rem(600);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         strong{
         color: orange;        
         }
     }
 
     &--text{
-        margin-top: rem(-30);
+        margin-top: -10rem;
 
     }
     &--buttons {
-        margin-top: rem(-310);
+        margin-top: -45rem;
         display: flex;
         gap: rem(40);
         align-items: center;
@@ -135,9 +140,11 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 }
    
 }
-&__middleSide{
+&__middleSide img{
+    width: 250px;
+    margin-left: 85px;
     img{
-        width: 100%;
+     width: 100%;
     }
 }
 &__rightSide{

@@ -21,7 +21,7 @@
 
 <style lang="scss" >
 .c-newsletter{
-    // grid en 2 colonnes background black et image qui donne un effet qui sort du background et centre 
+  
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: $black;
@@ -30,12 +30,13 @@
     gap: rem(5);
     margin: rem(100);
     border-radius: rem(20);
+    align-items: center;
 
     &__img{
-        position: relative;
+        // position: relative;
         & img{
-            position: absolute;
-            top: -30%;
+            // position: absolute;
+            // top: -30%;
             width: 70%;
         }
     }
