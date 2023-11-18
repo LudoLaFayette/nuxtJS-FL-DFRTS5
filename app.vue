@@ -1,5 +1,5 @@
 <script setup>
-import { useGlobalStore } from '@/store/global'
+import { useGlobalStore } from '@/stores/global.js'
 const store = useGlobalStore()
 
 onMounted(() => {
