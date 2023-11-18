@@ -38,7 +38,7 @@ console.log(recipes)
     justify-content: center;
     color: $primary-color;
     margin-top: rem(130);
-    font-size: $tiny_font_size;
+    font-size: $normal_font_size;
 }
 
 .c-title {

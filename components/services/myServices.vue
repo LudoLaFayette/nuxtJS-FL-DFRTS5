@@ -38,7 +38,7 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
     margin: rem(30) rem(0) rem(0) rem(0);
   }
   &__title {
-    font-size: $big-font-size;
+    font-size: $big_font_size;
     font-weight: 700;
     text-align: center;
     margin-bottom: rem(30);
