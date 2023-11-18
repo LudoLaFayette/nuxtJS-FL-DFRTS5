@@ -29,6 +29,7 @@ const buttonLabel = computed(() => isAlreadyInCart(id) ? 'Remove from cart' : 'A
       <div class="card__content-flex" >
         <h2>{{ title }}</h2>
         <MyNote></MyNote>
+        <!-- <p>{{ description }}</p> -->
       </div>
       <div class='card__button'>
           <MyButton v-if="!isAlreadyInCart(id)" variant='rounded' size='small' @click="store.addToCart(id)">Add to Cart
