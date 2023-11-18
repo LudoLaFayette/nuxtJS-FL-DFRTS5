@@ -50,11 +50,7 @@ const props = defineProps({
     background-color: $primary-color;
     stroke: $white;
     border-radius: 50%;
-    fill: $primary-color;
 
-    img{
-    fill: $primary-color;
-  }
   }
   &__title{
     font-weight: 600;
