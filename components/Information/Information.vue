@@ -28,6 +28,7 @@ const props = defineProps({
   padding: rem(35);
   margin: rem(20) rem(60);
   box-shadow: 0px rem(1) rem(4) rgba(0, 0, 0, 0.25);
+  
   &__item {
     flex: 1;
     display: flex;
@@ -49,6 +50,11 @@ const props = defineProps({
     background-color: $primary-color;
     stroke: $white;
     border-radius: 50%;
+    fill: $primary-color;
+
+    img{
+    fill: $primary-color;
+  }
   }
   &__title{
     font-weight: 600;

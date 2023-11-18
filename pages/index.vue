@@ -35,6 +35,8 @@ useSeoMeta({
 </div>
 <RecipeCard></RecipeCard>
 
+<myServices :services="home.data.services"></myServices>
+
 
 <div>
   <HowTo
