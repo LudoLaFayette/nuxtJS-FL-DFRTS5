@@ -127,7 +127,7 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 
     }
     &--buttons {
-        margin-top: -45rem;
+        margin-top: -15rem;
         display: flex;
         gap: rem(40);
         align-items: center;
