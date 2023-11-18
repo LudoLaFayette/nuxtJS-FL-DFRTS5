@@ -63,8 +63,6 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
   gap: rem(50);
   align-items: center;
     margin-top: rem(-190);
-    margin-left: rem(50);
-    margin-right: rem(50);
     &__middleSide{
         display: flex;
     }
@@ -108,7 +106,7 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
 
     }
     &--title{
-        margin-top: rem(20);
+        margin-top: rem(-30);
         line-height: 1.2;
         color: black;
         font-weight: 700;
