@@ -2,6 +2,7 @@
 const props = defineProps({
     testimonials: Array,
 })
+import { usePrismic } from "@prismicio/vue";
 const { client } = usePrismic()
 const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
 </script>

@@ -4,7 +4,7 @@ const env = useRuntimeConfig()
 const { data: recipes } = await useAsyncData('recipes', () => {
   return $fetch(env.public.apiUrl + '/recipes')
 })
-
+import { usePrismic } from "@prismicio/vue";
 const { client } = usePrismic()
 const { data: home, error } = await useAsyncData('home', () => client.getSingle("homepage"))
 
