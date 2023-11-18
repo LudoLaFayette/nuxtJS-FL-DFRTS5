@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  
+  ssr: true,
   imports: {
     transform: {
       // you could also add the path of your built library to prevent this happening 
