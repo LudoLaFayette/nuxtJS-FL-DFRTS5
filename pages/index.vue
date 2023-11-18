@@ -58,6 +58,6 @@ useSeoMeta({
 </template>
 <style lang='scss'>
 .b-index{
-  margin: rem(10) rem(60);
+  margin: rem(15) rem(60);
 }
 </style>
