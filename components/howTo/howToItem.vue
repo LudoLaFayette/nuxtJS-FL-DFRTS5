@@ -34,7 +34,7 @@
       display: flex;
     }
     strong {
-      justify-content: end;
+      justify-content: flex-end;
       display: flex;
     }
   }
