@@ -62,11 +62,12 @@ const { data: home, error } = await useAsyncData('home', () => client.getSingle(
   grid-template-columns: repeat(3, 1fr);
   gap: rem(50);
   align-items: center;
- margin-top: rem(-190);
- margin-left: rem(50);
-margin-right: rem(50);
-
-
+    margin-top: rem(-190);
+    margin-left: rem(50);
+    margin-right: rem(50);
+    &__middleSide{
+        display: flex;
+    }
   &__leftSide{
     display: grid;
     grid-template-rows: repeat(4,1fr);

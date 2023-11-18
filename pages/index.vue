@@ -25,7 +25,9 @@ useSeoMeta({
 })
 </script>
 
-<template>
+<template >
+
+<div class="b-index">
 
 
 <Hero :title="home.data.hero_title" :text="home.data.hero_text" :buttons="home.data.hero_button" />
@@ -48,7 +50,14 @@ useSeoMeta({
   />
   </div>
 
+  <MyTestimonials :testimonials="home.data.testimonials"/>
+
+<MyNewsletter></MyNewsletter>
+</div>
+
 </template>
 <style lang='scss'>
-
+.b-index{
+  margin: rem(10) rem(60);
+}
 </style>

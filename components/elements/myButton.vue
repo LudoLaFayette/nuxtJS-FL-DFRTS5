@@ -6,7 +6,7 @@ const props = defineProps({
   variant: String,
   color: String,
   bg: String,
-  hasIcon: Boolean
+  hasIcon: Boolean,
 })
 
 const className = computed(() => ({
