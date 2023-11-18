@@ -58,7 +58,7 @@ console.log(store);
       &__menu {
           ul {
               display: flex;
-              font-size: $tiny_font_size;  
+              font-size: $normal_font_size;  
               font-weight: 600;
               gap: rem(30);              
               list-style-type: none;
